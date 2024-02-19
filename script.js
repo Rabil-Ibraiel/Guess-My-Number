@@ -8,8 +8,7 @@ const heighScore = document.querySelector(".highscore");
 let score = document.querySelector(".score");
 let randNumber = Math.floor(Math.random() * 20 + 1);
 
-document.querySelector(".again").addEventListener("click", restartGame);
-
+/* Game Logic */
 function startGame() {
   check.addEventListener("click", () => {
     const guess = document.querySelector(".guess").value;
@@ -34,6 +33,12 @@ function startGame() {
   });
 }
 
+startGame();
+/* End Game Logic */
+
+/* Restart Game Logic */
+document.querySelector(".again").addEventListener("click", restartGame);
+
 function restartGame() {
   score.innerHTML = 20;
   randNumber = Math.floor(Math.random() * 20 + 1);
@@ -42,5 +47,4 @@ function restartGame() {
   document.querySelector("body").style.background = "#222";
   document.querySelector(".guess").value = "";
 }
-
-startGame();
+/* End Restart Game Logic */
